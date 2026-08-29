@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WaveAnime (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WaveAnime (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

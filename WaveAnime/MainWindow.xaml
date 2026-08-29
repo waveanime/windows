@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="WaveAnime.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WaveAnime"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="WaveAnime">
+
+    <NavigationView x:Name="NavView"
+                    PaneDisplayMode="Left"
+                    IsSettingsVisible="False"
+                    IsBackButtonVisible="Collapsed"
+                    Loaded="NavView_Loaded"
+                    SelectionChanged="NavView_SelectionChanged">
+
+        <!-- Liens du haut -->
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Accueil" Tag="Home">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE80F;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Content="Catalogue" Tag="Catalog">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE8B9;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Content="Planning" Tag="Planning">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE787;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <!-- Profil utilisateur en bas -->
+        <NavigationView.FooterMenuItems>
+            <NavigationViewItem Tag="Profile">
+                <NavigationViewItem.Content>
+                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                        <!-- Avatar de l'utilisateur -->
+                        <PersonPicture DisplayName="Alexandre Dupont" 
+                                       Initials="AD"
+                                       Width="30" Height="30"/>
+                        <TextBlock Text="Alexandre D." VerticalAlignment="Center" FontWeight="SemiBold"/>
+                    </StackPanel>
+                </NavigationViewItem.Content>
+            </NavigationViewItem>
+        </NavigationView.FooterMenuItems>
+
+        <!-- Zone centrale où la page sélectionnée apparaît -->
+        <Frame x:Name="ContentFrame"/>
+
+    </NavigationView>
+</Window>
